@@ -1,21 +1,41 @@
-from fastapi import FastAPI, Request
-from pydantic import BaseModel
+from fastapi import FastAPI
+from models.request_schemas import RequestBody, UpdatedRequestBody
+from utils import increment_version, authentications
+from processors import fetch_issue_details
 
 app = FastAPI()
 
-# Define a Pydantic model to parse the JSON body
-class RequestBody(BaseModel):
-    issue_Key: str
-    title: str
-    version_number: str
-    confluence_page_id: str
-    email: str
-    api_token: str
-
 @app.post("/download_docx")
-async def read_request(body: RequestBody):
-    # Print the received JSON data to the console
-    print(body.dict())
+async def main(request_body: RequestBody):
+    # Access the fields from request_body
+    issue_Key = request_body.issue_Key
+    title = request_body.title
+    version_number = request_body.version_number
+    confluence_page_id = request_body.confluence_page_id
+    email = request_body.email
+    api_token = request_body.api_token
 
-    # Return a response (you can modify this as needed)
-    return {"message": "Data received", "data": body.dict()}
+    # Increment the version number
+    incremented_version_number = increment_version.increment_version(version_number)
+
+    # Create API tokens
+    api_token_v1 = authentications.create_api_token_v1(email, api_token)
+    api_token_v2 = authentications.create_api_token_v2(email, api_token)
+
+ # Create a new instance of UpdatedRequestBody
+    updated_request_body = UpdatedRequestBody(
+        issue_Key=issue_Key,
+        title=title,
+        version_number=version_number,  # Use the original version number here
+        confluence_page_id=confluence_page_id,
+        email=email,
+        api_token=api_token,
+        incremented_version_number=incremented_version_number,
+        api_token_v1=api_token_v1,
+        api_token_v2=api_token_v2
+    )
+    
+    #this needs to be in try and except block 
+    issue_details =  fetch_issue_details.fetch_issue_details(updated_request_body)
+
+    return {"message": "Request Initiated"}
