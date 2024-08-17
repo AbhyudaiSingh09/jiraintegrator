@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from models.request_schemas import RequestBody, UpdatedRequestBody
 from utils import increment_version, authentications
-from processors import fetch_issue_details
+from processors import fetch_issue_details,process_download_attachment
 
 app = FastAPI()
 
@@ -34,8 +34,9 @@ async def main(request_body: RequestBody):
         api_token_v1=api_token_v1,
         api_token_v2=api_token_v2
     )
-    
-    #this needs to be in try and except block 
+
+
     issue_details =  fetch_issue_details.fetch_issue_details(updated_request_body)
+    download_docx=  process_download_attachment.process_attachments(updated_request_body,issue_details)
 
     return {"message": "Request Initiated"}

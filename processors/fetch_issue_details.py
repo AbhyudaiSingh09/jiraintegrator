@@ -13,19 +13,32 @@ def fetch_issue_details(updated_request_body):
         'Authorization': f'Basic {updated_request_body.api_token_v1}',
         'Accept': 'application/json'
     }
+
     # Send a GET request to fetch the issue details
-    response = requests.get(jira_url, headers=headers)
-    
-    # Check if the request was successful
-    if response.status_code == 200:
-        response_data = response.json()
+    try:
+        # Attempt to send a GET request to fetch the issue details
+        response = requests.get(jira_url, headers=headers)
+        response.raise_for_status()  # Raise an HTTPError if the HTTP request returned an unsuccessful status code
+        return response.json()  # Return the JSON response if successful
 
-        # Pretty-print the JSON with an indentation of 4 spaces
-        pretty_json = json.dumps(response_data, indent=4)
+    except requests.exceptions.HTTPError as http_err:
+        # Log and print the specific HTTP error
+        logger.error(f"HTTP error occurred: {http_err}")
+        print(f"HTTP error occurred: {http_err}")
 
-        print(pretty_json)
-        return response.json()
-    else:
-        # Log an error message if the request failed
-        logger.error(f"Failed to fetch issue details: {response.status_code} - {response.text}")
-        return None
+    except requests.exceptions.ConnectionError as conn_err:
+        # Log and print any connection-related errors
+        logger.error(f"Connection error occurred: {conn_err}")
+        print(f"Connection error occurred: {conn_err}")
+
+    except requests.exceptions.Timeout as timeout_err:
+        # Log and print any timeout errors
+        logger.error(f"Timeout error occurred: {timeout_err}")
+        print(f"Timeout error occurred: {timeout_err}")
+
+    except requests.exceptions.RequestException as req_err:
+        # Catch all other request-related errors
+        logger.error(f"An error occurred: {req_err}")
+        print(f"An error occurred: {req_err}")
+
+    return ""  # Return "" if any errors occurred
