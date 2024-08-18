@@ -1,0 +1,5 @@
+2024-08-17 21:08:54,635 - logger_config - WARNING - confluence_uploader.py:42 - Failed to upload content: 404 - {"errors":[{"status":404,"code":"NOT_FOUND","title":"Not Found","detail":null}]}
+2024-08-17 21:09:42,827 - logger_config - WARNING - confluence_uploader.py:42 - Failed to upload content: 404 - {"errors":[{"status":404,"code":"NOT_FOUND","title":"Not Found","detail":null}]}
+2024-08-17 21:10:43,660 - logger_config - WARNING - confluence_uploader.py:42 - Failed to upload content: 404 - {"errors":[{"status":404,"code":"NOT_FOUND","title":"Not Found","detail":null}]}
+2024-08-17 21:13:42,771 - logger_config - WARNING - confluence_uploader.py:42 - Failed to upload content: 409 - {"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [3]. Provided version: [2]","detail":null}]}
+2024-08-17 21:17:03,269 - logger_config - WARNING - confluence_uploader.py:42 - Failed to upload content: 409 - {"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [4]. Provided version: [4]","detail":null}]}

@@ -43,11 +43,11 @@ def process_attachments(updated_request_body,issue_details):
 
                 if downloaded_file:
                     # Extract content from the downloaded .docx file
-                    docx_to_markdown(downloaded_file)
+                    markdown_content= docx_to_markdown(downloaded_file)
                     # Clean up the downloaded file
                     os.remove(downloaded_file)
                     logger.info("Content has been extracted and returned!")
-                    return "Conversion Completed" 
+                    return markdown_content
         
         # Log an info message if no .docx attachments were found
         logger.warning("No .docx attachments found.")

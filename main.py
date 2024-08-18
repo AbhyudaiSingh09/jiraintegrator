@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from models.request_schemas import RequestBody, UpdatedRequestBody
 from utils import increment_version, authentications
-from processors import fetch_issue_details,process_download_attachment
+from processors import fetch_issue_details,process_download_attachment,confluence_uploader
 
 app = FastAPI()
 
-@app.post("/download_docx")
+@app.post("/docx_to_markdown")
 async def main(request_body: RequestBody):
     # Access the fields from request_body
     issue_Key = request_body.issue_Key
@@ -37,6 +37,6 @@ async def main(request_body: RequestBody):
 
 
     issue_details =  fetch_issue_details.fetch_issue_details(updated_request_body)
-    download_docx=  process_download_attachment.process_attachments(updated_request_body,issue_details)
-
-    return {"message": "Request Initiated"}
+    markdown_content=  process_download_attachment.process_attachments(updated_request_body,issue_details)
+    respone = confluence_uploader.confluence_uploader(updated_request_body,markdown_content)
+    return {respone}
