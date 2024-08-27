@@ -1,11 +1,9 @@
 
 import requests
 from logger_config import logger as logger
-import os
-from processors.docx_to_markdown_conversion import docx_to_markdown
+from processors import docx_to_markdown_conversion,get_images,image_converter,markdown_to_html
+from utils import read_htmlfile,garbage_collector
 
-# Define the paths for the input .docx file and output README.md file'
-output_file_path = 'README.md'
 
 
 def download_attachment(attachment_url,updated_request_body, filename):
@@ -20,6 +18,7 @@ def download_attachment(attachment_url,updated_request_body, filename):
         # Save the attachment to a file
         with open(filename, 'wb') as f:
             f.write(response.content)
+        logger.info(f"content has been downloaded from Jira for issue {updated_request_body.issue_Key}")
         return filename
     else:
         # Log an error message if the download failed
@@ -37,17 +36,26 @@ def process_attachments(updated_request_body,issue_details):
             if attachment['filename'].endswith('.docx'):
                 attachment_url = attachment['content']
                 # filename = 'document.docx'
-                filename = attachment['filename']
+                basefilepath = attachment['filename']
                 # Download the .docx file
-                downloaded_file = download_attachment(attachment_url,updated_request_body,filename)
+                downloaded_file = download_attachment(attachment_url,updated_request_body,basefilepath)
 
                 if downloaded_file:
                     # Extract content from the downloaded .docx file
-                    markdown_content= docx_to_markdown(downloaded_file)
-                    # Clean up the downloaded file
-                    os.remove(downloaded_file)
-                    logger.info("Content has been extracted and returned!")
-                    return markdown_content
+                    # Images
+                    basefolder_path=get_images.extract_images_from_docx(basefilepath)
+                    # text
+                    markdownfilename= docx_to_markdown_conversion.docx_to_markdown(downloaded_file)
+                    html_filename = markdown_to_html.write_content_to_htmlfile(markdownfilename)
+                   
+                    input_html_file_path=output_html_file_path= html_filename
+                    image_converter.replace_images_with_base64_in_html(input_html_file_path,basefolder_path,output_html_file_path)
+                    html_content = read_htmlfile.read_html_file(input_html_file_path)
+
+                    logger.info("Content and Images have been extracted and written to {basefolder_path},{basefilepath}!")
+                    basefilepath=basefilepath.rstrip('.docx')
+                    garbage_collector.remove_files_and_folder(basefilepath)
+                    return html_content
         
         # Log an info message if no .docx attachments were found
         logger.warning("No .docx attachments found.")

@@ -24,7 +24,7 @@ def confluence_uploader(updated_request_body,data) -> str:
         },
         "version": {
             "number": updated_request_body.incremented_version_number,  
-            "message": "Updated by Flask Server"
+            "message": "Updated by JiraIntegrator Server"
         },
     }
 
@@ -39,4 +39,5 @@ def confluence_uploader(updated_request_body,data) -> str:
     else:
         # Log an error message if the update failed
         logger.warning(f"Failed to upload content: {response.status_code} - {response.text}")
+        return ""
     

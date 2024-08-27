@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from models.request_schemas import RequestBody, UpdatedRequestBody
-from utils import increment_version, authentications
+from utils import increment_version, authentications, read_htmlfile
 from processors import fetch_issue_details,process_download_attachment,confluence_uploader
 
 app = FastAPI()
 
-@app.post("/docx_to_markdown")
+@app.post("/Upload_to_confluence")
 async def main(request_body: RequestBody):
     # Access the fields from request_body
     issue_Key = request_body.issue_Key
@@ -14,7 +14,6 @@ async def main(request_body: RequestBody):
     confluence_page_id = request_body.confluence_page_id
     email = request_body.email
     api_token = request_body.api_token
-
     # Increment the version number
     incremented_version_number = increment_version.increment_version(version_number)
 
@@ -37,6 +36,6 @@ async def main(request_body: RequestBody):
 
 
     issue_details =  fetch_issue_details.fetch_issue_details(updated_request_body)
-    markdown_content=  process_download_attachment.process_attachments(updated_request_body,issue_details)
-    respone = confluence_uploader.confluence_uploader(updated_request_body,markdown_content)
+    html_content=  process_download_attachment.process_attachments(updated_request_body,issue_details)
+    respone =  confluence_uploader.confluence_uploader(updated_request_body,html_content)
     return {respone}

@@ -6,7 +6,7 @@ import json
 def fetch_issue_details(updated_request_body):
     # Construct the Jira API URL for fetching issue details
     jira_url = f"https://smw104-jams.atlassian.net/rest/api/3/issue/{updated_request_body.issue_Key}"
-    # jira_url=f"https://smw104-jams.atlassian.net/wiki/api/v2/attachments/{issue_key}"
+
    
     # Set the headers for the request, including the authorization token
     headers = {
