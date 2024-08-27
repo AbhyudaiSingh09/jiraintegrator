@@ -1,4 +1,4 @@
-Format this in markdown 
+
 # Jira Integrator
 
 ## Overview
