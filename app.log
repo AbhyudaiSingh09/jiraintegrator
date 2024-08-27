@@ -44,3 +44,31 @@
 2024-08-26 22:48:04,356 - logger_config - ERROR - process_download_attachment.py:94 - Failed to download document: 303 - 
 2024-08-26 22:48:04,693 - logger_config - ERROR - process_download_attachment.py:94 - Failed to download document: 303 - 
 2024-08-26 22:48:04,693 - logger_config - WARNING - process_download_attachment.py:130 - No .docx attachments found.
+2024-08-27 17:09:06,587 - logger_config - ERROR - markdown_to_html.py:17 - An error occurred: source_file is not a valid path
+2024-08-27 17:31:49,785 - logger_config - ERROR - markdown_to_html.py:17 - An error occurred: source_file is not a valid path
+2024-08-27 17:36:08,866 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:36:56,572 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:37:21,869 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:38:24,317 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:39:32,583 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:39:32,862 - logger_config - ERROR - image_converter.py:57 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:40:45,793 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:40:46,076 - logger_config - ERROR - image_converter.py:57 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:43:30,950 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:43:31,191 - logger_config - ERROR - image_converter.py:57 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:43:31,517 - logger_config - WARNING - confluence_uploader.py:41 - Failed to upload content: 409 - {"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [17]. Provided version: [17]","detail":null}]}
+2024-08-27 17:43:47,143 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:43:47,386 - logger_config - ERROR - image_converter.py:57 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:45:35,492 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:45:36,018 - logger_config - ERROR - image_converter.py:57 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:47:22,563 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:47:22,852 - logger_config - ERROR - image_converter.py:57 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:49:47,416 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:49:47,691 - logger_config - ERROR - image_converter.py:59 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:50:53,229 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:50:53,497 - logger_config - ERROR - image_converter.py:59 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:50:53,838 - logger_config - WARNING - confluence_uploader.py:41 - Failed to upload content: 409 - {"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [19]. Provided version: [21]","detail":null}]}
+2024-08-27 17:51:02,592 - logger_config - ERROR - get_images.py:73 - An error occurred while extracting images: name 'asyncio' is not defined
+2024-08-27 17:51:02,823 - logger_config - ERROR - image_converter.py:59 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-08-27 17:53:23,913 - logger_config - WARNING - image_converter.py:94 - Image file StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-08-27 17:53:23,914 - logger_config - WARNING - image_converter.py:94 - Image file StripeProcessWalkthrough/image9.png not found. Skipping this image.
