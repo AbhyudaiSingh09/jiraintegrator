@@ -110,19 +110,3 @@ Send a POST request to `/Upload_to_confluence` with a JSON body containing the r
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 
-### Updates Made:
-
-1. **Request Structure**:
-   - Added a detailed JSON structure for the request body required by the `/Upload_to_confluence` endpoint.
-   - Explained each field in the request body.
-
-2. **Document Processing**:
-   - Updated the documentation to reflect that `.docx` files are now converted to HTML instead of Markdown before uploading to Confluence.
-
-3. **Code Structure**:
-   - Included references to the relevant Python modules that handle different aspects of the process (e.g., fetching Jira details, processing attachments, uploading to Confluence).
-
-4. **Features**:
-   - Adjusted the features list to mention HTML conversion and uploading.
-
-This updated documentation should now accurately reflect the current functionality of your Jira Integrator project.
