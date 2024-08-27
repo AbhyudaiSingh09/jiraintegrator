@@ -1,5 +1,4 @@
 
-```markdown
 # Jira Integrator
 
 ## Overview
@@ -109,7 +108,7 @@ Send a POST request to `/Upload_to_confluence` with a JSON body containing the r
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-```
+
 
 ### Updates Made:
 
