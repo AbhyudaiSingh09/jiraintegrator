@@ -2,11 +2,15 @@ from logger_config import logger as logger
 import requests
 import json
 
-def confluence_uploader(updated_request_body,data) -> str:
+
+async def confluence_uploader(updated_request_body,data,yaml_config) -> str:
+
+    confluence_url = yaml_config['Confluence']['confluence_url']
+
     # Construct the Confluence API URL for updating content using v2 API
-    confluence_url = f"https://smw104-jams.atlassian.net/wiki/api/v2/pages/{updated_request_body.confluence_page_id}"
-    
-    # Set the headers for the request, including the authorization token and content type
+    confluence_url = confluence_url.format(confluence_page_id=updated_request_body.confluence_page_id)
+
+    # Set the headers 
     headers = {
     "Accept": "application/json",
     "Content-Type": "application/json"
@@ -24,7 +28,7 @@ def confluence_uploader(updated_request_body,data) -> str:
         },
         "version": {
             "number": updated_request_body.incremented_version_number,  
-            "message": "Updated by JiraIntegrator Server"
+            "message": "Updated by JiraIntegrator"
         },
     }
 
@@ -35,9 +39,9 @@ def confluence_uploader(updated_request_body,data) -> str:
     if response.status_code == 200:
         logger.info("Content uploaded successfully")
         # logger.info(response.json())  # Log the full response for debugging
-        return (f"{response.status_code} :{response.text}")
+        return (response.status_code)
     else:
         # Log an error message if the update failed
-        logger.warning(f"Failed to upload content: {response.status_code} - {response.text}")
-        return ""
+        logger.error(f"Failed to upload content: {response.status_code}:{response.text}")
+        return (response.status_code)
     

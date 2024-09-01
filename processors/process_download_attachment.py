@@ -1,4 +1,3 @@
-
 import requests
 from logger_config import logger as logger
 from processors import docx_to_markdown_conversion,get_images,image_converter,markdown_to_html

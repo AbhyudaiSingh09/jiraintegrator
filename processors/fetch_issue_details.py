@@ -1,11 +1,14 @@
 from logger_config import logger as logger
 import requests 
-import json
 
 
-def fetch_issue_details(updated_request_body):
+
+async def fetch_issue_details(updated_request_body,yaml_config):
+    
     # Construct the Jira API URL for fetching issue details
-    jira_url = f"https://smw104-jams.atlassian.net/rest/api/3/issue/{updated_request_body.issue_Key}"
+    jira_url = yaml_config['Confluence']['jira_url']
+
+    jira_url = jira_url.format(issue_Key=updated_request_body.issue_Key)
 
    
     # Set the headers for the request, including the authorization token
@@ -24,21 +27,20 @@ def fetch_issue_details(updated_request_body):
     except requests.exceptions.HTTPError as http_err:
         # Log and print the specific HTTP error
         logger.error(f"HTTP error occurred: {http_err}")
-        print(f"HTTP error occurred: {http_err}")
 
     except requests.exceptions.ConnectionError as conn_err:
         # Log and print any connection-related errors
         logger.error(f"Connection error occurred: {conn_err}")
-        print(f"Connection error occurred: {conn_err}")
+
 
     except requests.exceptions.Timeout as timeout_err:
         # Log and print any timeout errors
         logger.error(f"Timeout error occurred: {timeout_err}")
-        print(f"Timeout error occurred: {timeout_err}")
+
 
     except requests.exceptions.RequestException as req_err:
         # Catch all other request-related errors
         logger.error(f"An error occurred: {req_err}")
-        print(f"An error occurred: {req_err}")
 
-    return ""  # Return "" if any errors occurred
+
+    return ""  
