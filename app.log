@@ -1,0 +1,85 @@
+2024-09-01 00:01:26,137 - logger_config - WARNING - image_converter.py:56 - Image file StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 00:01:26,138 - logger_config - WARNING - image_converter.py:56 - Image file StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 00:01:26,745 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 00:05:01,882 - logger_config - ERROR - get_images.py:42 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 00:05:01,883 - logger_config - ERROR - docx_to_markdown_conversion.py:19 - An error occurred during the docx to markdown conversion: source_file is not a valid path
+2024-09-01 00:05:01,883 - logger_config - ERROR - markdown_to_html.py:23 - An error occurred: source_file is not a valid path
+2024-09-01 00:05:01,883 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 00:05:01,883 - logger_config - ERROR - read_htmlfile.py:26 - An error occurred while reading None: expected str, bytes or os.PathLike object, not NoneType
+2024-09-01 00:05:02,206 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 400:{"errors":[{"status":400,"code":"INVALID_REQUEST_BODY","title":"Must provide both value and representation in body","detail":null}]}
+2024-09-01 00:06:05,573 - logger_config - ERROR - get_images.py:42 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 00:06:05,573 - logger_config - ERROR - get_images.py:42 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 00:06:05,826 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 00:06:06,210 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 00:06:06,211 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 00:06:06,590 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 00:13:43,778 - logger_config - ERROR - get_images.py:43 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 00:13:44,057 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 00:13:44,450 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 00:14:40,765 - logger_config - ERROR - get_images.py:43 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 00:14:41,038 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 00:14:41,421 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 13:33:36,604 - logger_config - ERROR - get_images.py:44 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 13:33:36,880 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 13:33:37,257 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 13:38:14,390 - logger_config - ERROR - get_images.py:44 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 13:38:14,633 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 13:38:14,992 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 13:44:20,872 - logger_config - ERROR - get_images.py:44 - An error occurred while extracting images: Package not found at 'StripeProcessWalkthrough.docx'
+2024-09-01 13:44:21,118 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 13:44:21,496 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 13:46:14,575 - logger_config - ERROR - get_images.py:51 - An error occurred while extracting images: File not found at: StripeProcessWalkthrough.docx
+2024-09-01 13:46:14,855 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 13:46:15,235 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 13:47:43,578 - logger_config - ERROR - get_images.py:51 - An error occurred while extracting images: File not found at: StripeProcessWalkthrough.docx
+2024-09-01 13:47:43,860 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 13:47:44,241 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 13:48:36,112 - logger_config - ERROR - get_images.py:51 - An error occurred while extracting images: File not found at: StripeProcessWalkthrough.docx
+2024-09-01 13:48:36,396 - logger_config - ERROR - image_converter.py:21 - Invalid input parameters: NoneType found in html_file_path, images_folder, or output_html_file_path.
+2024-09-01 13:48:36,764 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 13:57:20,774 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 13:57:20,775 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 13:57:21,393 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:04:45,980 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:04:45,980 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:04:46,545 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:08:57,866 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:08:57,867 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:08:58,544 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:12:35,807 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:12:35,807 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:12:36,550 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:12:56,498 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:12:56,499 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:12:57,235 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:19:26,101 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:19:26,102 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:19:26,769 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:22:06,647 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:22:06,648 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:22:06,650 - logger_config - ERROR - garbage_collector.py:37 - An error occurred: cannot access local variable 'basefilepath' where it is not associated with a value
+2024-09-01 14:22:07,326 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:22:37,744 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:22:37,744 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:22:37,746 - logger_config - ERROR - garbage_collector.py:37 - An error occurred: cannot access local variable 'basefilepath' where it is not associated with a value
+2024-09-01 14:22:38,312 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:24:35,181 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:24:35,181 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:24:35,184 - logger_config - ERROR - garbage_collector.py:37 - An error occurred: cannot access local variable 'basefilepath' where it is not associated with a value
+2024-09-01 14:24:35,837 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:26:11,995 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:26:11,996 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:26:11,998 - logger_config - ERROR - garbage_collector.py:37 - An error occurred: cannot access local variable 'basefilepath' where it is not associated with a value
+2024-09-01 14:26:12,652 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:26:56,790 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:26:56,791 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:26:56,793 - logger_config - ERROR - garbage_collector.py:37 - An error occurred: cannot access local variable 'basefilepath' where it is not associated with a value
+2024-09-01 14:26:57,419 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:27:37,349 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:27:37,350 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:27:38,087 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:28:15,894 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:28:15,895 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.
+2024-09-01 14:28:16,474 - logger_config - ERROR - confluence_uploader.py:45 - Failed to upload content: 409:{"errors":[{"status":409,"code":"CONFLICT","title":"Version must be incremented when updating a page. Current Version: [20]. Provided version: [20]","detail":null}]}
+2024-09-01 14:29:49,811 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image.png not found. Skipping this image.
+2024-09-01 14:29:49,812 - logger_config - WARNING - image_converter.py:56 - Image file Temproary/StripeProcessWalkthrough/image9.png not found. Skipping this image.

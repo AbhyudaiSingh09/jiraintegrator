@@ -2,3 +2,6 @@
 Confluence:
   confluence_url: "https://smw104-jams.atlassian.net/wiki/api/v2/pages/{confluence_page_id}"
   jira_url: "https://smw104-jams.atlassian.net/rest/api/3/issue/{issue_Key}"
+
+Folder:
+  temp_folder: "Temproary/"

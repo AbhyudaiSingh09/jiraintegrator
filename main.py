@@ -39,6 +39,6 @@ async def main(request_body: RequestBody):
 
 
     issue_details =  await fetch_issue_details.fetch_issue_details(updated_request_body,yaml_config)
-    html_content=  await process_download_attachment.process_attachments(updated_request_body,issue_details)
+    html_content=  await process_download_attachment.process_attachments(updated_request_body,issue_details,yaml_config)
     respone =  await confluence_uploader.confluence_uploader(updated_request_body,html_content,yaml_config)
     return {respone}

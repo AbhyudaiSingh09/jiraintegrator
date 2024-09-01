@@ -10,14 +10,14 @@ async def write_content_to_htmlfile(filename: str) -> str:
         html_content = await asyncio.to_thread(pypandoc.convert_file, filename, 'html')
     
         # Create file name for HTML
-        html_filename = filename.rstrip('.md') + ".html"
+        html_filename_path = filename.rstrip('.md') + ".html"
         
         # Write the HTML content to a file asynchronously
-        async with aiofiles.open(html_filename, 'w') as f:
+        async with aiofiles.open(html_filename_path, 'w') as f:
             await f.write(html_content)
         
-        logger.info(f"HTML file created: {html_filename}")
-        return html_filename
+        logger.info(f"HTML file created: {html_filename_path}")
+        return html_filename_path
 
     except Exception as e:
         logger.error(f"An error occurred: {e}")

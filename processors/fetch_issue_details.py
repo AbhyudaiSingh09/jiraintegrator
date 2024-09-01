@@ -7,22 +7,18 @@ async def fetch_issue_details(updated_request_body,yaml_config):
     
     # Construct the Jira API URL for fetching issue details
     jira_url = yaml_config['Confluence']['jira_url']
-
     jira_url = jira_url.format(issue_Key=updated_request_body.issue_Key)
 
-   
     # Set the headers for the request, including the authorization token
     headers = {
         'Authorization': f'Basic {updated_request_body.api_token_v1}',
         'Accept': 'application/json'
     }
 
-    # Send a GET request to fetch the issue details
     try:
-        # Attempt to send a GET request to fetch the issue details
         response = requests.get(jira_url, headers=headers)
-        response.raise_for_status()  # Raise an HTTPError if the HTTP request returned an unsuccessful status code
-        return response.json()  # Return the JSON response if successful
+        response.raise_for_status()  
+        return response.json()  
 
     except requests.exceptions.HTTPError as http_err:
         # Log and print the specific HTTP error
