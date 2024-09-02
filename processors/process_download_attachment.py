@@ -6,14 +6,12 @@ import aiofiles
 import os
 
 
-
-
 async def download_attachment(attachment_url,updated_request_body, filename,yaml_config):
 
     temp_folder = yaml_config.Folder.temp_folder
     
     # Ensure the folder exists
-    os.makedirs(temp_folder, exist_ok=True)
+    os.makedirs(temp_folder, exist_ok=True) 
     
     # Construct the full path to the file in the temporary folder
     file_path = os.path.join(temp_folder, filename)
@@ -66,7 +64,7 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
                     await image_converter.replace_images_with_base64_in_html(input_html_file_path,basefolder_path,output_html_file_path)
                     html_content = await read_htmlfile.read_html_file(html_filename_path)
 
-                    logger.info(f"Content and Images have been extracted and written to {html_filename_path},{basefolder_path}!")
+                    logger.info(f"Content and Images have been extracted and written to {html_filename_path} in {basefolder_path}!")
                     basefilepath=basefilepath.rstrip('.docx')
                     await garbage_collector.remove_files_and_folder(basefilepath,yaml_config)
                     return html_content
