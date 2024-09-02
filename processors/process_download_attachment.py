@@ -1,6 +1,6 @@
 import requests
 from logger_config import logger as logger
-from processors import docx_to_markdown_conversion,get_images,image_converter,markdown_to_html
+from processors import docx_to_markdown_conversion,get_images,image_converter,markdown_to_html,create_confluencepage
 from utils import read_htmlfile,garbage_collector
 import aiofiles
 import os
@@ -10,7 +10,7 @@ import os
 
 async def download_attachment(attachment_url,updated_request_body, filename,yaml_config):
 
-    temp_folder = yaml_config['Folder']['temp_folder']
+    temp_folder = yaml_config.Folder.temp_folder
     
     # Ensure the folder exists
     os.makedirs(temp_folder, exist_ok=True)
@@ -58,6 +58,8 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
                     basefolder_path=  await get_images.extract_images_from_docx(downloaded_file_path,yaml_config)
                     # text
                     markdownfilename=  await docx_to_markdown_conversion.docx_to_markdown(downloaded_file_path)
+                    # confluence_pageid = await create_confluencepage.create_confluence_page(yaml_config,updated_request_body)
+                    # print(confluence_pageid)
                     html_filename_path = await markdown_to_html.write_content_to_htmlfile(markdownfilename)
                    
                     input_html_file_path=output_html_file_path= html_filename_path
@@ -65,9 +67,7 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
                     html_content = await read_htmlfile.read_html_file(html_filename_path)
 
                     logger.info(f"Content and Images have been extracted and written to {html_filename_path},{basefolder_path}!")
-                    # print(f"The basefile path : {basefilepath}")
                     basefilepath=basefilepath.rstrip('.docx')
-                    print(f"The basefile path : {basefilepath}")
                     await garbage_collector.remove_files_and_folder(basefilepath,yaml_config)
                     return html_content
         

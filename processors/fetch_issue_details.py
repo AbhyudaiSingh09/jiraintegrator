@@ -6,8 +6,7 @@ import requests
 async def fetch_issue_details(updated_request_body,yaml_config):
     
     # Construct the Jira API URL for fetching issue details
-    jira_url = yaml_config['Confluence']['jira_url']
-    jira_url = jira_url.format(issue_Key=updated_request_body.issue_Key)
+    jira_url = yaml_config.Confluence.jira_issue_url.format(issue_Key=updated_request_body.issue_Key,domain=yaml_config.Confluence.domain_identidfier)
 
     # Set the headers for the request, including the authorization token
     headers = {

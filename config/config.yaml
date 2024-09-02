@@ -1,7 +1,21 @@
 
 Confluence:
-  confluence_url: "https://smw104-jams.atlassian.net/wiki/api/v2/pages/{confluence_page_id}"
-  jira_url: "https://smw104-jams.atlassian.net/rest/api/3/issue/{issue_Key}"
+  confluence_uploader_url: "https://{domain}.atlassian.net/wiki/api/v2/pages/{confluence_page_id}"
+  jira_issue_url: "https://{domain}.atlassian.net/rest/api/3/issue/{issue_Key}"
+  confluence_page_creator_url: "https://{domain}/wiki/api/v2/pages"
+  domain_identidfier: "smw104-jams"
+  space_key: "Jams104"
+  status: "current"
+  representation: "storage"
+  message: "Updated by JiraIntegrator"
+  space_ID: "6619140"
+  parent_page_ID: "7897099"
+
 
 Folder:
   temp_folder: "Temproary/"
+
+
+Extensions:
+  extensions: ['.md', '.html', '.docx']
+

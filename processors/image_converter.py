@@ -31,7 +31,7 @@ async def replace_images_with_base64_in_html(html_file_path: str, images_folder:
 
     # Find all image tags with src attributes
     image_tags = re.findall(r'<img\s+[^>]*src="([^"]+)"[^>]*>', html_content)
-
+    
     for img_tag in image_tags:
         # Extract the image filename from the src attribute
         image_filename = os.path.basename(img_tag)
@@ -49,7 +49,7 @@ async def replace_images_with_base64_in_html(html_file_path: str, images_folder:
                 base64_image = f"data:image/png;base64,{base64_str}"
 
                 # Replace the image path with the Base64-encoded string in the HTML content
-                html_content = html_content.replace(f'src="{img_tag}"', f'src="{base64_image}"')
+                html_content = html_content.replace(f'src="{img_tag}"', f'\nsrc="{base64_image}"')
             else:
                 logger.error(f"Failed to encode image {image_filename} at {image_path}")
         else:

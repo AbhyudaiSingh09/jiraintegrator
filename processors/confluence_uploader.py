@@ -4,31 +4,29 @@ import json
 
 
 async def confluence_uploader(updated_request_body,data,yaml_config) -> str:
-
-    confluence_url = yaml_config['Confluence']['confluence_url']
-
     # Construct the Confluence API URL for updating content using v2 API
-    confluence_url = confluence_url.format(confluence_page_id=updated_request_body.confluence_page_id)
+    confluence_url = yaml_config.Confluence.confluence_uploader_url.format(confluence_page_id=updated_request_body.confluence_page_id, domain=yaml_config.Confluence.domain_identidfier)
 
     # Set the headers 
     headers = {
     "Accept": "application/json",
     "Content-Type": "application/json"
     }
+
     auth = updated_request_body.api_token_v2
     
     # Prepare the data payload for the request
     data = {
         "id": updated_request_body.confluence_page_id,
-        "status": "current",
+        "status": yaml_config.Confluence.status,
         "title": updated_request_body.title,
         "body": {
-            "representation": "storage",
+            "representation": yaml_config.Confluence.representation,
             "value": data,
         },
         "version": {
-            "number": updated_request_body.incremented_version_number,  
-            "message": "Updated by JiraIntegrator"
+            "number": updated_request_body.incremented_version_number,   
+            "message": yaml_config.Confluence.message
         },
     }
 

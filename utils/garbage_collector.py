@@ -4,15 +4,12 @@ import asyncio
 from logger_config import logger
 
 async def remove_files_and_folder(base_filename: str,yaml_config: dict) -> str:
-    """Asynchronously removes .md, .html, .docx files and a folder based on the base filename."""
+    """Asynchronously removes .md, .html, .docx files and a folder based on the base filename in temp folder."""
     try:
-        temp_folder_path = yaml_config['Folder']['temp_folder']
+        temp_folder_path = yaml_config.Folder.temp_folder
 
-        # Define the file extensions to be removed
-        extensions = ['.md', '.html', '.docx']
-        
         # Remove the files asynchronously
-        for ext in extensions:
+        for ext in yaml_config.Extensions.extensions:
             file_path = temp_folder_path + base_filename + ext
             if os.path.exists(file_path):
                 await asyncio.to_thread(os.remove, file_path)
