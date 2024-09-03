@@ -1,6 +1,7 @@
 import aiofiles
 from logger_config import logger
 
+
 async def read_html_file(html_file_path: str) -> str:
     """Reads and returns the content of an HTML file asynchronously."""
     try:
@@ -13,3 +14,4 @@ async def read_html_file(html_file_path: str) -> str:
     except Exception as e:
         logger.error(f"An error occurred while reading {html_file_path}: {e}")
         return None
+    
