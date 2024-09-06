@@ -6,6 +6,7 @@ from utils import increment_version
 
 
 def create_confluence_page(yaml_config, updated_request_body,page_title) -> ConfluencePageResponse:
+    print(f"page_title inside:{page_title}")
     confluence_page_creator_url = yaml_config.Confluence.confluence_page_creator_url.format(domain=yaml_config.Confluence.domain_identidfier)
 
     headers = {
@@ -38,7 +39,9 @@ def create_confluence_page(yaml_config, updated_request_body,page_title) -> Conf
         page_id = response_data.get("id")
         page_title = response_data.get("title")
         version_number = response_data.get("version", {}).get("number", 1) 
-        version_number = increment_version.increment_version(version_number-1)
+        print(f"beforeince:{version_number}")
+        version_number = increment_version.increment_version(version_number)
+        print(f"afterince:{version_number}")
         page_data = ConfluencePageResponse(
             id=page_id,
             title=page_title,

@@ -52,6 +52,7 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
 
                 if downloaded_file_path:
                     page_title = await read_docx_file.get_page_title(downloaded_file_path)
+                    print(f"page_title:{page_title}")
                     # Extract content from the downloaded .docx file
                     # Images
                     basefolder_path=  await get_images.extract_images_from_docx(downloaded_file_path,yaml_config)
@@ -59,6 +60,7 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
                     markdownfilename=  await docx_to_markdown_conversion.docx_to_markdown(downloaded_file_path)
             
                     page_data =  create_confluencepage.create_confluence_page(yaml_config,updated_request_body,page_title)
+                    print(f"page_data outside:{page_data}")
 
                     html_filename_path = await markdown_to_html.write_content_to_htmlfile(markdownfilename)
                    
@@ -69,6 +71,7 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
                     logger.info(f"Content and Images have been extracted and written to {html_filename_path} in {basefolder_path}!")
                     basefilepath=basefilepath.rstrip('.docx')
                     await garbage_collector.remove_files_and_folder(basefilepath,yaml_config)
+
                     return html_content,page_data
         
         # Log an info message if no .docx attachments were found

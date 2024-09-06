@@ -5,7 +5,7 @@ import json
 
 
 async def confluence_uploader(updated_request_body,data,yaml_config,page_data) -> str:
-
+    print(f"page_data:{page_data}")
     # Construct the Confluence API URL for updating content using v2 API
     confluence_url = yaml_config.Confluence.confluence_uploader_url.format(confluence_page_id=page_data.id, domain=yaml_config.Confluence.domain_identidfier)
 
