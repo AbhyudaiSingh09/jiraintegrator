@@ -5,7 +5,7 @@ class PageVersion(BaseModel):
     number: Optional[int]
 
 class ConfluencePageResponse(BaseModel):
-    id: str
+    id: int
     title: str
     version: int
 

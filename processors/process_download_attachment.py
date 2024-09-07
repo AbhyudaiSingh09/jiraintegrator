@@ -1,6 +1,6 @@
 import requests
 from logger_config import logger as logger
-from processors import docx_to_markdown_conversion,get_images,image_converter,markdown_to_html,create_confluencepage
+from processors import docx_to_markdown_conversion,get_images,image_converter,markdown_to_html
 from utils import read_docx_file, read_html_file,garbage_collector
 import aiofiles
 import os
@@ -59,8 +59,8 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
                     # text
                     markdownfilename=  await docx_to_markdown_conversion.docx_to_markdown(downloaded_file_path)
             
-                    page_data =  create_confluencepage.create_confluence_page(yaml_config,updated_request_body,page_title)
-                    print(f"page_data outside:{page_data}")
+                    # page_data =  create_confluencepage.create_confluence_page(yaml_config,updated_request_body,page_title)
+
 
                     html_filename_path = await markdown_to_html.write_content_to_htmlfile(markdownfilename)
                    
@@ -72,7 +72,7 @@ async def process_attachments(updated_request_body,issue_details,yaml_config):
                     basefilepath=basefilepath.rstrip('.docx')
                     await garbage_collector.remove_files_and_folder(basefilepath,yaml_config)
 
-                    return html_content,page_data
+                    return html_content,page_title
         
         # Log an info message if no .docx attachments were found
         logger.warning("No .docx attachments found.")
