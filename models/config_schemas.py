@@ -6,6 +6,7 @@ class ConfluenceConfig(BaseModel):
     confluence_uploader_url: str
     jira_issue_url: str
     confluence_page_creator_url: str
+    page_data_url: str
     domain_identidfier: str
     space_key: str
     status: str

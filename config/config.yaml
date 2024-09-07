@@ -3,13 +3,14 @@ Confluence:
   confluence_uploader_url: "https://{domain}/wiki/api/v2/pages/{confluence_page_id}"
   jira_issue_url: "https://{domain}/rest/api/3/issue/{issue_Key}"
   confluence_page_creator_url: "https://{domain}/wiki/api/v2/pages"
+  page_data_url: "https://{domain}/wiki/rest/api/content?title={page_title}&spaceKey={space_key}&expand=version"
   domain_identidfier: "smw104-jams.atlassian.net"
   space_key: "Jams104"
   status: "current"
   representation: "storage"
   message: "Updated by JiraIntegrator"
   space_ID: "6619140"
-  parent_page_ID: "7897099"
+  parent_page_ID: "7634945"
 
 
 Folder:
