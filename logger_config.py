@@ -9,11 +9,11 @@ logger.setLevel(logging.DEBUG)  # Set to DEBUG to capture all levels of logs
 
 # Create handlers
 console_handler = logging.StreamHandler()
-file_handler = logging.FileHandler('app.log')
+file_handler = logging.FileHandler('logs/app.log')
 
 # Set log levels for handlers
 console_handler.setLevel(logging.INFO)  # Console will show INFO and above (INFO, WARNING, ERROR, CRITICAL)
-file_handler.setLevel(logging.WARNING)    # File will log WARNING and above (WARNING,ERROR, CRITICAL)
+file_handler.setLevel(logging.INFO)    # File will log WARNING and above (WARNING,ERROR, CRITICAL)
 
 # Create formatters and add them to handlers
 # formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

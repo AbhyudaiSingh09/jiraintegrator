@@ -13,7 +13,6 @@ async def get_page_title(docx_file_path: str) -> str:
         for para in doc.paragraphs:
             if para.style.name.startswith('Heading'):
                 logger.info(f"Page Title extracted: {para.text.strip()}")
-                print(f"para.text.strip():{para.text.strip()}")
                 return para.text.strip()
 
         # If no headings are found, log a warning and return None

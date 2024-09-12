@@ -5,7 +5,7 @@ import asyncio
 from docx import Document
 from logger_config import logger  
 
-async def extract_images_from_docx(docx_path: str, yaml_config: dict) -> str:
+async def extract_images_from_docx(docx_path: str, confluence_config: dict) -> str:
     try:
         if not os.path.exists(docx_path):
             raise FileNotFoundError(f"File not found at: {docx_path}")
@@ -17,8 +17,8 @@ async def extract_images_from_docx(docx_path: str, yaml_config: dict) -> str:
         base_filename = os.path.splitext(os.path.basename(docx_path))[0]
 
         # Get the temporary folder path from the YAML config and create the full output folder path
-        temp_folder = yaml_config.Folder.temp_folder
-        output_folder = os.path.join(temp_folder, base_filename)
+        working_directory = confluence_config.working_directory
+        output_folder = os.path.join(working_directory, base_filename)
 
         # Create the output folder if it doesn't exist
         if not os.path.exists(output_folder):

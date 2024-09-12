@@ -1,8 +1,4 @@
-from pydantic import BaseModel,field_validator
-from typing import Optional
-
-class PageVersion(BaseModel):
-    number: Optional[int]
+from pydantic import BaseModel
 
 class ConfluencePageResponse(BaseModel):
     id: int

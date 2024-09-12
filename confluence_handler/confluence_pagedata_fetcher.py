@@ -3,11 +3,11 @@ from logger_config import logger
 from models.confluence_uploader_schema import ConfluencePageResponse
 from utils import increment_version
 
-async def get_page_data(updated_request_body, yaml_config, page_title) -> ConfluencePageResponse:
-    confluence_url = yaml_config.Confluence.page_data_url.format(
-        domain=yaml_config.Confluence.domain_identidfier,
+async def get_page_data(confluence_config, page_title) -> ConfluencePageResponse:
+    confluence_url = confluence_config.page_data_url.format(
+        domain=confluence_config.domain_identifier,
         page_title=page_title,
-        space_key=yaml_config.Confluence.space_key
+        space_key=confluence_config.space_key
     )
 
     headers = {
@@ -20,7 +20,7 @@ async def get_page_data(updated_request_body, yaml_config, page_title) -> Conflu
     response = requests.get(
         confluence_url,
         headers=headers,
-        auth=updated_request_body.api_token_v2
+        auth=confluence_config.api_token_v2
     )
 
     if response.status_code == 200:
