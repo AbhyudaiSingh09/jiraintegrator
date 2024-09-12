@@ -43,10 +43,9 @@ pip install -r requirements.txt
 
 Before running the application, ensure that you have set up the necessary environment variables:
 
-- **JIRA_API_TOKEN**: Your Jira API token.
+- **EMAILN**: Your EMAIL
 - **CONFLUENCE_API_TOKEN**: Your Confluence API token.
-- **JIRA_BASE_URL**: The base URL of your Jira instance.
-- **CONFLUENCE_BASE_URL**: The base URL of your Confluence instance.
+
 
 ## Usage
 
@@ -71,7 +70,6 @@ Send a POST request to `/Upload_to_confluence` with a JSON body containing the r
 ```json
 {
     "issue_key": "ISSUE-123",
-   
 }
 ```
 
