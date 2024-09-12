@@ -70,18 +70,14 @@ Send a POST request to `/Upload_to_confluence` with a JSON body containing the r
 
 ```json
 {
-    "issue_Key": "ISSUE-123",
-    "title": "Document Title",
-    "version_number": "1.0",
-    "confluence_page_id": "123456789",
-    "email": "user@example.com",
-    "api_token": "your_api_token"
+    "issue_key": "ISSUE-123",
+   
 }
 ```
 
 **Explanation of Fields**:
 
-- **issue_Key**: The Jira issue key associated with the document.
+- **issue_key**: The Jira issue key associated with the document.
 - **title**: The title of the document.
 - **version_number**: The current version number of the document.
 - **confluence_page_id**: The ID of the Confluence page where the content will be uploaded.
