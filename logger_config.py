@@ -4,8 +4,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 # Set the default log level
-logger.setLevel(logging.DEBUG)  # Set to DEBUG to capture all levels of logs
-
+logger.setLevel(logging.DEBUG)  
+    
 # Create handlers
 console_handler = logging.StreamHandler()
 file_handler = logging.FileHandler("logs/app.log")
