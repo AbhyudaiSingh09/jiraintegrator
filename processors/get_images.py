@@ -1,9 +1,9 @@
-
 import os
 import aiofiles
-import asyncio 
+import asyncio
 from docx import Document
-from logger_config import logger  
+from logger_config import logger
+
 
 async def extract_images_from_docx(docx_path: str, confluence_config: dict) -> str:
     try:
@@ -29,17 +29,17 @@ async def extract_images_from_docx(docx_path: str, confluence_config: dict) -> s
         for rel in doc.part.rels.values():
             if "image" in rel.target_ref:
                 image_count += 1
-                
+
                 # Extract the original image filename from the relationship target reference
                 image_name = os.path.basename(rel.target_ref)
-                
+
                 # Define the full path for the image
                 image_path = os.path.join(output_folder, image_name)
-                
-                # Save the image to the output folder asynchronously by the name of the image in docx file 
+
+                # Save the image to the output folder asynchronously by the name of the image in docx file
                 async with aiofiles.open(image_path, "wb") as img_file:
                     await img_file.write(rel.target_part.blob)
-                
+
                 logger.info(f"Saved {image_name} to {image_path}")
 
         logger.info(f"Extracted {image_count} images to folder: {output_folder}")

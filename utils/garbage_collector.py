@@ -3,13 +3,14 @@ import shutil
 import asyncio
 from logger_config import logger
 
-async def remove_files_and_folder(base_filename: str,confluence_config: dict) -> str:
+
+async def remove_files_and_folder(base_filename: str, confluence_config: dict) -> str:
     """Asynchronously removes .md, .html, .docx files and a folder based on the base filename in temp folder."""
     try:
         working_directory_path = confluence_config.working_directory
         # Remove the files asynchronously
         for ext in confluence_config.extensions:
-            file_path = working_directory_path + base_filename + "."  + ext
+            file_path = working_directory_path + base_filename + "." + ext
             if os.path.exists(file_path):
                 await asyncio.to_thread(os.remove, file_path)
                 logger.info(f"Removed file: {file_path}")

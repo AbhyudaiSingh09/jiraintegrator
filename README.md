@@ -71,7 +71,7 @@ Send a POST request to `/Upload_to_confluence` with a JSON body containing the r
 ```json
 {
     "issue_key": "ISSUE-123",
-   
+
 }
 ```
 
@@ -104,5 +104,3 @@ Send a POST request to `/Upload_to_confluence` with a JSON body containing the r
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-

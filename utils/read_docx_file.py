@@ -2,6 +2,7 @@ from docx import Document
 from logger_config import logger
 import asyncio
 
+
 async def get_page_title(docx_file_path: str) -> str:
     print(f"docx_file_path:{docx_file_path}")
     """Extracts and returns the text content of the first heading in a DOCX file asynchronously."""
@@ -11,7 +12,7 @@ async def get_page_title(docx_file_path: str) -> str:
 
         # Iterate over the paragraphs in the DOCX file to find the first heading
         for para in doc.paragraphs:
-            if para.style.name.startswith('Heading'):
+            if para.style.name.startswith("Heading"):
                 logger.info(f"Page Title extracted: {para.text.strip()}")
                 return para.text.strip()
 
